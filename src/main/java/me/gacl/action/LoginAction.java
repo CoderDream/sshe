@@ -1,5 +1,13 @@
 package me.gacl.action;
 
+import java.util.Date;
+import java.util.UUID;
+
+import me.gacl.model.User;
+import me.gacl.service.UserServiceI;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
 
 /**
  * @Title: LoginAction
@@ -14,6 +22,13 @@ public class LoginAction extends BaseAction {
     public String password;
 
     public String message;
+    
+    
+    /**
+     * 注入userService
+     */
+    @Autowired
+    private UserServiceI userService;
 
     /**
      * 进入登录页面
@@ -30,7 +45,10 @@ public class LoginAction extends BaseAction {
      * @return
      */
     public String doLogin() {
-        if ("mike".equals(username) && "123456".equals(password)) {
+        
+        User user = userService.query(username, password); 
+        
+        if (null != user) {
             return SUCCESS;
         } else {
             this.setMessage("Bad username or password!");

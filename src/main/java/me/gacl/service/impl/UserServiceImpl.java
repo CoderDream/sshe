@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import me.gacl.dao.UserDaoI;
 import me.gacl.model.User;
 import me.gacl.service.UserServiceI;
+
 //使用Spring提供的@Service注解将UserServiceImpl标注为一个Service
 @Service("userService")
 public class UserServiceImpl implements UserServiceI {
@@ -17,7 +18,7 @@ public class UserServiceImpl implements UserServiceI {
      */
     @Autowired
     private UserDaoI userDao;
-    
+
     @Override
     public void test() {
         System.out.println("Hello World!");
@@ -26,5 +27,10 @@ public class UserServiceImpl implements UserServiceI {
     @Override
     public Serializable save(User user) {
         return userDao.save(user);
+    }
+
+    @Override
+    public User query(String username, String password) {
+        return userDao.query(username, password);
     }
 }

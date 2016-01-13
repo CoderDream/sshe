@@ -8,17 +8,17 @@ http://localhost:8080/sshe/
 
 mike/123456
 
-1. 登录页面
+1，登录页面
 
 
 ![](https://raw.githubusercontent.com/CoderDream/sshe/master/doc/snapshot/v5.0/v5001.png)
 
-2. 登录失败
+2，登录失败
 
 
 ![](https://raw.githubusercontent.com/CoderDream/sshe/master/doc/snapshot/v5.0/v5002.png)
 
-3. 登录成功
+3，登录成功
 
 
 ![](https://raw.githubusercontent.com/CoderDream/sshe/master/doc/snapshot/v5.0/v5003.png)
